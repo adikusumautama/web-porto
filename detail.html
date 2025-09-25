@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek - Portofolio Adi Kusuma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+        }
+        .accent-color { color: #4fd1c5; }
+        .bg-accent-color { background-color: #4fd1c5; }
+        .bg-accent-color-hover:hover { background-color: #38b2ac; }
+        .border-accent-color { border-color: #4fd1c5; }
+        
+        /* -- Animasi Saat Scroll -- */
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="index.html"><span class="accent-color">Portofolio</span></a>
+            </div>
+            <ul class="hidden md:flex items-center space-x-8 font-medium">
+                <li><a href="index.html#tentang" class="hover:text-teal-500 transition duration-300">Tentang Saya</a></li>
+                <li><a href="index.html#pendidikan" class="hover:text-teal-500 transition duration-300">Pendidikan</a></li>
+                <li><a href="index.html#portofolio" class="hover:text-teal-500 transition duration-300">Portofolio</a></li>
+                <li><a href="index.html#kontak" class="hover:text-teal-500 transition duration-300">Kontak</a></li>
+            </ul>
+            <div class="md:hidden">
+                <button id="menu-btn" type="button" title="Buka menu navigasi" class="text-gray-700 focus:outline-none" aria-label="Buka menu navigasi">
+                    <span class="sr-only">Buka menu navigasi</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="index.html#tentang" class="block py-2 text-gray-700 hover:text-teal-500">Tentang Saya</a>
+            <a href="index.html#pendidikan" class="block py-2 text-gray-700 hover:text-teal-500">Pendidikan</a>
+            <a href="index.html#portofolio" class="block py-2 text-gray-700 hover:text-teal-500">Portofolio</a>
+            <a href="index.html#kontak" class="block py-2 text-gray-700 hover:text-teal-500">Kontak</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Project Detail Section -->
+        <section class="py-20 md:py-24 section-hidden">
+            <div class="container mx-auto px-6">
+
+                <!-- Project Header -->
+                <div class="max-w-4xl mx-auto text-center mb-12">
+                    <a href="index.html#portofolio" class="text-teal-500 font-semibold hover:text-teal-700 transition duration-300">← Kembali ke Portofolio</a>
+                    <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-2">Company Profile PT. Maju Jaya</h1>
+                    <p class="text-xl text-gray-600">Website modern untuk meningkatkan citra digital perusahaan.</p>
+                </div>
+
+                <!-- Project Hero Image -->
+                <div class="max-w-5xl mx-auto bg-white p-4 rounded-lg shadow-2xl mb-16">
+                    <img src="https://placehold.co/1200x600/4FD1C5/FFFFFF?text=Website+Klien" alt="Gambar Proyek Company Profile" class="rounded-md w-full">
+                </div>
+
+                <!-- Project Content -->
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Left Column (Details) -->
+                    <aside class="md:col-span-1">
+                        <div class="bg-white p-6 rounded-lg shadow-lg sticky top-28">
+                            <h3 class="text-xl font-bold border-b pb-3 mb-4">Detail Proyek</h3>
+                            <div class="space-y-4 text-gray-700">
+                                <div>
+                                    <h4 class="font-semibold">Klien</h4>
+                                    <p>PT. Maju Jaya</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Peran Saya</h4>
+                                    <p>Full-Stack Developer</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Tanggal</h4>
+                                    <p>Maret 2024</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Teknologi</h4>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <span class="bg-teal-50 text-teal-700 text-sm font-medium py-1 px-3 rounded-full">Laravel</span>
+                                        <span class="bg-teal-50 text-teal-700 text-sm font-medium py-1 px-3 rounded-full">Tailwind CSS</span>
+                                        <span class="bg-teal-50 text-teal-700 text-sm font-medium py-1 px-3 rounded-full">JavaScript</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-4 border-t">
+                                <a href="#" class="bg-accent-color text-white text-center w-full block font-bold py-3 px-6 rounded-lg shadow-lg bg-accent-color-hover transition duration-300">Kunjungi Situs</a>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Right Column (Description) -->
+                    <article class="md:col-span-2 text-lg text-gray-700 leading-relaxed space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-3">Tentang Proyek</h2>
+                            <p>Proyek ini bertujuan untuk merancang dan mengembangkan company profile modern bagi PT. Maju Jaya. Website ini berfungsi sebagai platform utama untuk menampilkan informasi perusahaan, layanan yang ditawarkan, serta portofolio proyek yang telah dikerjakan untuk meningkatkan kredibilitas dan jangkauan pasar.</p>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-3">Tantangan & Solusi</h2>
+                            <p>Tantangan utama adalah menciptakan desain yang profesional dan responsif, sekaligus memastikan sistem manajemen konten (CMS) yang mudah digunakan oleh staf internal perusahaan. Saya merancang arsitektur informasi yang logis dan mengembangkan backend kustom menggunakan Laravel, yang memungkinkan admin untuk memperbarui konten dengan mudah tanpa memerlukan pengetahuan teknis.</p>
+                        </div>
+                        <div class="bg-white p-2 rounded-lg shadow-lg">
+                           <img src="https://placehold.co/800x450/A0AEC0/FFFFFF?text=Screenshot+CMS" alt="Screenshot CMS Proyek" class="rounded w-full">
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-3">Hasil & Pembelajaran</h2>
+                            <p>Hasilnya adalah sebuah website yang cepat, aman, dan sepenuhnya responsif. Klien melaporkan peningkatan interaksi pengguna sebesar 30% dalam bulan pertama peluncuran. Proyek ini mengasah kemampuan saya dalam pengembangan full-stack, terutama dalam mengintegrasikan backend yang fungsional dengan frontend yang menarik secara visual.</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="year"></span> Adi Kusuma. Semua Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // -- Script untuk menu mobile --
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        // -- Script untuk tahun di footer --
+        document.getElementById("year").textContent = new Date().getFullYear();
+        
+        // -- Script untuk Animasi Saat Scroll --
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        const hiddenSections = document.querySelectorAll('.section-hidden');
+        hiddenSections.forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
+

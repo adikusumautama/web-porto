@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek - Uni-Learn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+        }
+        .accent-color { color: #4fd1c5; }
+        .bg-accent-color { background-color: #4fd1c5; }
+        .bg-accent-color-hover:hover { background-color: #38b2ac; }
+        .border-accent-color { border-color: #4fd1c5; }
+        
+        /* -- Animasi Saat Scroll -- */
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* -- Style untuk Carousel yang Ditingkatkan -- */
+        .carousel-track {
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-dot {
+            transition: all 0.3s ease-in-out;
+        }
+        .carousel-dot.active {
+            background-color: #4fd1c5;
+            width: 1.5rem; /* Membuat dot aktif lebih panjang */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="index.html"><span class="accent-color">Portofolio</span></a>
+            </div>
+            <ul class="hidden md:flex items-center space-x-8 font-medium">
+                <li><a href="index.html#tentang" class="hover:text-teal-500 transition duration-300">Tentang Saya</a></li>
+                <li><a href="index.html#pendidikan" class="hover:text-teal-500 transition duration-300">Pendidikan</a></li>
+                <li><a href="index.html#portofolio" class="hover:text-teal-500 transition duration-300">Portofolio</a></li>
+                <li><a href="index.html#kontak" class="hover:text-teal-500 transition duration-300">Kontak</a></li>
+            </ul>
+            <div class="md:hidden">
+                <button id="menu-btn" type="button" title="Buka menu navigasi" class="text-gray-700 focus:outline-none" aria-label="Buka menu navigasi">
+                    <span class="sr-only">Buka menu navigasi</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="index.html#tentang" class="block py-2 text-gray-700 hover:text-teal-500">Tentang Saya</a>
+            <a href="index.html#pendidikan" class="block py-2 text-gray-700 hover:text-teal-500">Pendidikan</a>
+            <a href="index.html#portofolio" class="block py-2 text-gray-700 hover:text-teal-500">Portofolio</a>
+            <a href="index.html#kontak" class="block py-2 text-gray-700 hover:text-teal-500">Kontak</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Project Detail Section -->
+        <section class="py-20 md:py-24 section-hidden">
+            <div class="container mx-auto px-6">
+
+                <!-- Project Header -->
+                <div class="max-w-4xl mx-auto text-center mb-12">
+                    <a href="index.html#portofolio" class="text-teal-500 font-semibold hover:text-teal-700 transition duration-300">← Kembali ke Portofolio</a>
+                    <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-2">Uni-Learn</h1>
+                    <p class="text-xl text-gray-600">Platform E-Learning Interaktif untuk Pendidikan.</p>
+                </div>
+
+                <!-- Screenshot Carousel yang Diperbaiki -->
+                <div id="screenshot-carousel" class="max-w-5xl mx-auto bg-white rounded-lg shadow-2xl mb-16 relative overflow-hidden aspect-video">
+                    <div class="carousel-track flex h-full">
+                        <!-- Ganti 'src' dengan path gambar Anda. Placeholder digunakan sebagai contoh. -->
+                        <div class="carousel-slide w-full flex-shrink-0 h-full">
+                            <img src="assets/images/SSWebUniLearn/homepage.png" alt="Screenshot Halaman Utama Uni-Learn" class="rounded-md w-full h-full object-cover">
+                        </div>
+                        <div class="carousel-slide w-full flex-shrink-0 h-full">
+                             <img src="assets/images/SSWebUniLearn/dashboard_student.png" alt="Screenshot Halaman Daftar Kursus" class="rounded-md w-full h-full object-cover">
+                        </div>
+                        <div class="carousel-slide w-full flex-shrink-0 h-full">
+                             <img src="assets/images/SSWebUniLearn/admin_dashboard.png" alt="Screenshot Dashboard Siswa" class="rounded-md w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <button id="prev-btn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white backdrop-blur-sm p-3 rounded-full shadow-lg transition duration-300 transform hover:scale-110" title="Previous slide" aria-label="Gambar sebelumnya">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button id="next-btn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white backdrop-blur-sm p-3 rounded-full shadow-lg transition duration-300 transform hover:scale-110" title="Next slide" aria-label="Gambar berikutnya">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                    <!-- Indicator Dots -->
+                    <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                        <!-- Dots akan ditambahkan oleh JavaScript -->
+                    </div>
+                </div>
+
+
+                <!-- Project Content -->
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Left Column (Details) -->
+                    <aside class="md:col-span-1">
+                        <div class="bg-white p-6 rounded-lg shadow-lg sticky top-28">
+                            <h3 class="text-xl font-bold border-b pb-3 mb-4">Detail Proyek</h3>
+                            <div class="space-y-4 text-gray-700">
+                                <div>
+                                    <h4 class="font-semibold">Klien</h4>
+                                    <p>Capstone Project</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Peran Saya</h4>
+                                    <p>Front-End Developer</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Tahun</h4>
+                                    <p>2023</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Teknologi</h4>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <span class="bg-teal-50 text-teal-700 text-sm font-medium py-1 px-3 rounded-full">Framework Laravel</span>
+                                        <span class="bg-teal-50 text-teal-700 text-sm font-medium py-1 px-3 rounded-full">Bootstrap</span>
+                                        <span class="bg-teal-50 text-teal-700 text-sm font-medium py-1 px-3 rounded-full">MySQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-4 border-t">
+                                <!-- Ganti '#' dengan URL repositori GitHub Anda -->
+                                <a href="https://github.com/adikusumautama/uni-learn-lms" target="_blank" rel="noopener noreferrer" class="bg-accent-color text-white text-center w-full block font-bold py-3 px-6 rounded-lg shadow-lg bg-accent-color-hover transition duration-300">Lihat di GitHub</a>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Right Column (Description) -->
+                    <article class="md:col-span-2 text-lg text-gray-700 leading-relaxed space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-3">Tentang Proyek</h2>
+                            <p>Proyek ini merupakan pengembangan website Learning Management System (LMS), yaitu sebuah platform pembelajaran berbasis kursus dengan nama "Uni-Learn". Proyek ini saya kerjakan sebagai bagian dari Capstone Project akhir dalam program MSIB (Magang & Studi Independen Bersertifikat). Pada program Studi Independen tersebut, saya berhasil diterima di perusahaan PT. Educa Sisfomedia Indonesia (GAMELAB.ID) dan berkolaborasi bersama tim yang terdiri dari rekan-rekan peserta SIB lainnya. Proyek ini dibangun menggunakan Laravel Framework dengan dukungan Bootstrap serta basis data MySQL. Dalam pengerjaannya, saya berperan sebagai Front-End Developer.</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="year"></span> Adi Kusuma</p>
+        </div>
+    </footer>
+
+    <script>
+        // -- Script untuk menu mobile --
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        // -- Script untuk tahun di footer --
+        document.getElementById("year").textContent = new Date().getFullYear();
+        
+        // -- Script untuk Animasi Saat Scroll --
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        const hiddenSections = document.querySelectorAll('.section-hidden');
+        hiddenSections.forEach((el) => observer.observe(el));
+
+        // -- Script untuk Carousel Screenshot yang Ditingkatkan --
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselTrack = document.querySelector('.carousel-track');
+            if (!carouselTrack) return;
+
+            const slides = Array.from(carouselTrack.children);
+            const nextButton = document.getElementById('next-btn');
+            const prevButton = document.getElementById('prev-btn');
+            const dotsNav = document.getElementById('carousel-dots');
+            
+            let currentIndex = 0;
+            let slideInterval;
+
+            // Buat dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.setAttribute('aria-label', `Pindah ke gambar ${index + 1}`);
+                dot.classList.add('carousel-dot', 'w-3', 'h-3', 'bg-gray-300', 'rounded-full');
+                dotsNav.appendChild(dot);
+                dot.addEventListener('click', () => {
+                    moveToSlide(index);
+                    resetAutoplay();
+                });
+            });
+
+            const dots = Array.from(dotsNav.children);
+
+            const updateCarousel = () => {
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                carouselTrack.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+                
+                // Update dots
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[currentIndex].classList.add('active');
+            };
+
+            const moveToSlide = (targetIndex) => {
+                currentIndex = targetIndex;
+                updateCarousel();
+            };
+            
+            const showNextSlide = () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel();
+            };
+
+            const showPrevSlide = () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel();
+            };
+
+            // Event listener untuk tombol
+            nextButton.addEventListener('click', () => {
+                showNextSlide();
+                resetAutoplay();
+            });
+
+            prevButton.addEventListener('click', () => {
+                showPrevSlide();
+                resetAutoplay();
+            });
+            
+            // Autoplay functionality
+            const startAutoplay = () => {
+                slideInterval = setInterval(showNextSlide, 5000); // Ganti slide setiap 5 detik
+            };
+            
+            const resetAutoplay = () => {
+                clearInterval(slideInterval);
+                // Menunggu 8 detik sebelum memulai autoplay lagi setelah interaksi manual
+                setTimeout(startAutoplay, 8000); 
+            };
+
+            // Recalculate width on resize for responsiveness
+            window.addEventListener('resize', updateCarousel);
+
+            // Inisialisasi carousel
+            updateCarousel();
+            startAutoplay();
+        });
+    </script>
+</body>
+</html>
